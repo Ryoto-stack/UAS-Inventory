@@ -20,16 +20,15 @@ import { Button } from "@/components/ui/button";
 import Nav from "../../app/sidenav/Nav";
 import Side from "../../app/sidenav/Side";
 
-
 export default function CreateAccessories() {
   const form = useForm<CreateAccessorySchema>({
     resolver: zodResolver(createAccessorySchema),
     defaultValues: {
       name: "",
+      category: "",
+      status: "",
       modelNo: "",
       location: "",
-      total: "",
-      qty: "",
       purchaseCost: "",
     },
   });
@@ -68,15 +67,38 @@ export default function CreateAccessories() {
                 />
                 <FormField
                   control={form.control}
+                  name="category"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Category</FormLabel>
+                      <FormControl>
+                        <Input placeholder="...." {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="status"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Status</FormLabel>
+                      <FormControl>
+                        <Input placeholder="...." {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
                   name="modelNo"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Model No.</FormLabel>
                       <FormControl>
-                        <Textarea
-                          placeholder="...."
-                          {...field}
-                        />
+                        <Textarea placeholder="...." {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -89,42 +111,7 @@ export default function CreateAccessories() {
                     <FormItem>
                       <FormLabel>Location</FormLabel>
                       <FormControl>
-                        <Textarea
-                          placeholder="...."
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="total"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Total</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="...."
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="qty"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Quantity</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="...."
-                          {...field}
-                        />
+                        <Textarea placeholder="...." {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -137,16 +124,15 @@ export default function CreateAccessories() {
                     <FormItem>
                       <FormLabel>Purchase Cost</FormLabel>
                       <FormControl>
-                        <Textarea
-                          placeholder="...."
-                          {...field}
-                        />
+                        <Textarea placeholder="...." {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                <Button className=" mt-4" type="submit">Submit</Button>
+                <Button className=" mt-4" type="submit">
+                  Submit
+                </Button>
               </form>
             </Form>
           </div>

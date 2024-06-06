@@ -37,10 +37,10 @@ model Accessory {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
   createdAt    DateTime @default(now())
   name         String
+  category     String
+  status       String
   modelNo      String
   location     String
-  total        String
-  qty          String
   purchaseCost String
 
   @@map("accessory")
@@ -103,8 +103,8 @@ model Furniture {
   furnitureName String
   category      String
   modelNo       String
-  location      String
   manufacturer  String
+  location      String
   purchaseDate  String
   purchaseCost  String
 

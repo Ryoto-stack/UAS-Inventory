@@ -49,11 +49,11 @@ export function Furnitures() {
                                                 Export
                                             </span>
                                         </Button>
-                                        <Link href="/createconsumables">
+                                        <Link href="/createfurniture">
                                             <Button size="sm" variant="outline" className="h-8 gap-1 bg-yellow-300 text-neutral-950">
                                                 <PlusCircle className="h-3.5 w-3.5" />
                                                 <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                                                    Add Consumables
+                                                    Add Furniture
                                                 </span>
                                             </Button>
                                         </Link>
@@ -66,15 +66,10 @@ export function Furnitures() {
                                                 <TableHead>Name</TableHead>
                                                 <TableHead>Category</TableHead>
                                                 <TableHead>Model No.</TableHead>
-                                                <TableHead>Item No.</TableHead>
-                                                <TableHead>Total</TableHead>
-                                                <TableHead>Remaining</TableHead>
-                                                <TableHead>Min QTY</TableHead>
+                                                <TableHead>Manufacturer</TableHead>
                                                 <TableHead>Location</TableHead>
-                                                <TableHead>Order No.</TableHead>
                                                 <TableHead>Purchase Date</TableHead>
                                                 <TableHead>Purchase Cost</TableHead>
-                                                <TableHead>In/Out</TableHead>
                                                 <TableHead>
                                                     <span className="sr-only">Actions</span>
                                                 </TableHead>

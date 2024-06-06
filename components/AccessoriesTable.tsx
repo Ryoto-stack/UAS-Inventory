@@ -25,9 +25,9 @@ import { ListFilter, MoreHorizontal, PlusCircle, Download } from "lucide-react";
 
 import prisma from "@/lib/db/prisma";
 
-export default async function TableSample() {
+export default async function AccessoriesTable() {
 
-    const data = await prisma.assets.findMany({orderBy:{createdAt:'desc'}}) 
+    const data = await prisma.accessory.findMany({orderBy:{createdAt:'desc'}}) 
     console.log(data);
     
   return (
@@ -36,14 +36,14 @@ export default async function TableSample() {
         data && data.map((x, y:number)=>{
             return(
                 <TableRow key={y}>
-        <TableCell className="font-medium">{x.model}</TableCell>
-        
-        <TableCell>
-          <Badge variant="default">{x.status}</Badge>
-        </TableCell>
-        <TableCell className="hidden md:table-cell">{x.serial}</TableCell>
+        <TableCell className="font-medium">{x.name}</TableCell>
         <TableCell className="hidden md:table-cell">{x.category}</TableCell>
-        
+        <TableCell><Badge variant="default">{x.status}</Badge></TableCell>
+        <TableCell className="hidden md:table-cell">{x.modelNo}</TableCell>
+        <TableCell className="hidden md:table-cell">{x.location}</TableCell>
+        <TableCell className="hidden md:table-cell">{x.purchaseCost}</TableCell>
+        <TableCell className="hidden md:table-cell">{new Date(x.createdAt).toLocaleString('en-US', { timeZone: 'Asia/Manila' })}</TableCell>
+
         <TableCell>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

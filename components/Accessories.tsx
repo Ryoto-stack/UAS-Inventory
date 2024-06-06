@@ -27,7 +27,7 @@ import React from "react";
 import Nav from "@/app/sidenav/Nav";
 import Side from "@/app/sidenav/Side";
 
-export function Accessories() {
+export function Accessories({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen w-full flex-col ">
       <Nav />
@@ -65,29 +65,20 @@ export function Accessories() {
                     <TableHeader>
                       <TableRow>
                         <TableHead>Name</TableHead>
-                        <TableHead>Accessory Category</TableHead>
+                        <TableHead>Category</TableHead>
+                        <TableHead>Status</TableHead>
                         <TableHead>Model No.</TableHead>
                         <TableHead>Location</TableHead>
-                        <TableHead>Total</TableHead>
-                        <TableHead>Min. QTY</TableHead>
                         <TableHead>Purchase Cost</TableHead>
-                        <TableHead>In/Out</TableHead>
+                        <TableHead>Created At</TableHead>
                         <TableHead>
                           <span className="sr-only">Actions</span>
                         </TableHead>
                       </TableRow>
                     </TableHeader>
-                    <TableRow className="text-xs text-muted-foreground">
-                      No matching records found
-                    </TableRow>
+                    {children}
                   </Table>
                 </CardContent>
-                <CardFooter>
-                  <div className="text-xs text-muted-foreground">
-                    Showing <strong>1-10</strong> of <strong>1</strong>{" "}
-                    products
-                  </div>
-                </CardFooter>
               </Card>
             </TabsContent>
           </Tabs>

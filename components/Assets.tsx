@@ -1,12 +1,6 @@
-
-"use client"
+"use client";
 import Link from "next/link";
-import {
-  ListFilter,
-  MoreHorizontal,
-  PlusCircle,
-  Download,
-} from "lucide-react";
+import { ListFilter, MoreHorizontal, PlusCircle, Download } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -35,14 +29,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Tabs, TabsContent,} from "@/components/ui/tabs";
-
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 
 import React from "react";
 import Nav from "@/app/sidenav/Nav";
 import Side from "@/app/sidenav/Side";
 
-export function Assets({children}:{children:React.ReactNode}) {
+export function Assets({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen w-full flex-col ">
       <Nav />
@@ -61,7 +54,11 @@ export function Assets({children}:{children:React.ReactNode}) {
                     <div className="flex items-end gap-2">
                       <DropdownMenu>
                         <DropdownMenuTrigger>
-                          <Button size="sm" variant="outline" className="h-7 gap-1 bg-yellow-300 text-neutral-950">
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="h-7 gap-1 bg-yellow-300 text-neutral-950"
+                          >
                             <ListFilter className="h-3.5 w-3.5" />
                             <span className="sr-only sm:not-sr-only">
                               Filter
@@ -82,12 +79,20 @@ export function Assets({children}:{children:React.ReactNode}) {
                           </DropdownMenuCheckboxItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
-                      <Button size="sm" variant="outline" className="h-7 gap-1 bg-yellow-300 text-neutral-950">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-7 gap-1 bg-yellow-300 text-neutral-950"
+                      >
                         <Download className="h-3.5 w-3.5" />
                         <span className="sr-only sm:not-sr-only">Export</span>
                       </Button>
                       <Link href="/createassets">
-                        <Button size="sm" variant="outline" className="h-7 gap-1 bg-yellow-300 text-neutral-950">
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="h-7 gap-1 bg-yellow-300 text-neutral-950"
+                        >
                           <PlusCircle className="h-3.5 w-3.5" />
                           <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
                             Add Asset
@@ -109,6 +114,7 @@ export function Assets({children}:{children:React.ReactNode}) {
                         <TableHead className="hidden md:table-cell">
                           Category
                         </TableHead>
+                        <TableHead>Created At</TableHead>
                         <TableHead>
                           <span className="sr-only">Actions</span>
                         </TableHead>
@@ -117,16 +123,8 @@ export function Assets({children}:{children:React.ReactNode}) {
                     {children}
                   </Table>
                 </CardContent>
-                <CardFooter>
-                  <div className="text-xs text-muted-foreground">
-                    Showing <strong>1-10</strong> of <strong>32</strong>{" "}
-                    products
-                  </div>
-                </CardFooter>
               </Card>
             </TabsContent>
-            
-
           </Tabs>
         </main>
       </div>

@@ -2,10 +2,10 @@ import { z } from "zod";
 
 export const createAccessorySchema = z.object({
   name:    z.string().min(1, { message: "Name required" }),
+  category :  z.string().min(1, { message: "Category required" }),
+  status:    z.string().min(1, { message: "Status required" }),
   modelNo:    z.string().min(1, { message: "Model No. required" }),
   location:    z.string().min(1, { message: "location required" }),
-  total:  z.string().min(1, { message: "Total required" }),
-  qty:    z.string().min(1, { message: "Qty required" }),
   purchaseCost:  z.string().min(1, { message: "Purchase Cost required" }),
 });
 
