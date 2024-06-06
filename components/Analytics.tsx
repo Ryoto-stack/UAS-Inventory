@@ -6,7 +6,6 @@ import BarChart from "@/app/analyticcomponent/barchart";
 import { App } from "@/app/analyticcomponent/pie";
 
 import Nav from "@/app/sidenav/Nav";
-import Side from "@/app/sidenav/Side";
 import { Linechart } from "@/app/analyticcomponent/linechart";
 
 export default function Analytics() {
@@ -14,7 +13,6 @@ export default function Analytics() {
     <div className="flex min-h-screen w-full flex-col ">
       <Nav />
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-        <Side />
         <h1 className="text-3xl font-bold ml-5">Analytics</h1>
         <main>
           <div className="px-5 py-2 flex-row flex">

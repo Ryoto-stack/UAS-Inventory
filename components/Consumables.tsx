@@ -25,14 +25,13 @@ import { Tabs, TabsContent} from "@/components/ui/tabs";
 
 import React from "react";
 import Nav from "@/app/sidenav/Nav";
-import Side from "@/app/sidenav/Side";
 
 export function Consumables() {
     return (
         <div className="flex min-h-screen w-full flex-col bg-muted/40">
             <Nav />
             <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-                <Side />
+
                 <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
                     <Tabs defaultValue="all">
                         <TabsContent value="all">

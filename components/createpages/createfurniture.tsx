@@ -15,7 +15,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Nav from "@/app/sidenav/Nav";
-import Side from "@/app/sidenav/Side";
 
 export default function CreateFurniture() {
     const form = useForm<CreateFurnitureSchema>({
@@ -46,7 +45,6 @@ export default function CreateFurniture() {
         <div className="flex min-h-screen w-full flex-col ">
             <Nav />
             <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-                <Side />
                 <main className="flex items-center justify-center py-5">
                     <div className="mx-auto grid w-[600px] gap-6">
                         <h1 className="text-3xl font-bold">Create New Furniture</h1>
