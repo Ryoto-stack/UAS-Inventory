@@ -22,10 +22,11 @@ export default function CreateAppliances() {
         resolver: zodResolver(createAppliancesSchema),
         defaultValues: {
             name:"",
+            serial:"",
             category:"",
             location:"",
             purchaseDate:"",
-            purchaseCost:"",
+            purchaseCost:""
         },
     });
 
@@ -65,6 +66,19 @@ export default function CreateAppliances() {
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormLabel>Name</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="..." {...field} />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                 <FormField
+                                    control={form.control}
+                                    name="serial"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Serial</FormLabel>
                                             <FormControl>
                                                 <Input placeholder="..." {...field} />
                                             </FormControl>

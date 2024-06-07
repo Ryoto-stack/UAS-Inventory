@@ -49,7 +49,7 @@ export function Accessories({ children }: { children: React.ReactNode }) {
                           Export
                         </span>
                       </Button>
-                      <Link href="/createaccessories">
+                      <Link href="createpages/createaccessories">
                         <Button size="sm" variant="outline" className="h-8 gap-1 bg-yellow-300 text-neutral-950">
                           <PlusCircle className="h-3.5 w-3.5" />
                           <span className="sr-only sm:not-sr-only sm:whitespace-nowrap ">
@@ -70,9 +70,7 @@ export function Accessories({ children }: { children: React.ReactNode }) {
                         <TableHead>Location</TableHead>
                         <TableHead>Purchase Cost</TableHead>
                         <TableHead>Created At</TableHead>
-                        <TableHead>
-                          <span className="sr-only">Actions</span>
-                        </TableHead>
+                        <TableHead>Actions</TableHead>
                       </TableRow>
                     </TableHeader>
                     {children}

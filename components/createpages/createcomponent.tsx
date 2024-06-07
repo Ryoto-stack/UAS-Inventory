@@ -25,14 +25,13 @@ export default function CreateComponent() {
     resolver: zodResolver(createComponentSchema),
     defaultValues: {
       name: "",
+      serial: "",
+      status: "",
       category: "",
       quantity: "",
-      minQty: "",
-      serial: "",
-      company: "",
       location: "",
-      orderNumber: "",
       purchaseDate: "",
+      purchaseCost:""
     },
   });
 
@@ -79,6 +78,38 @@ export default function CreateComponent() {
                     </FormItem>
                   )}
                 />
+                                <FormField
+                  control={form.control}
+                  name="serial"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Serial</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="e.g Active, Spare, Deployed"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                                <FormField
+                  control={form.control}
+                  name="status"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Status</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="e.g Active, Spare, Deployed"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 <FormField
                   control={form.control}
                   name="category"
@@ -110,74 +141,10 @@ export default function CreateComponent() {
                 />
                 <FormField
                   control={form.control}
-                  name="minQty"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Category Description</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="e.g Sample Category"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="serial"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Serial Number</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="e.g Sample Category"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="company"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Company</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="e.g Sample Category"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
                   name="location"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Location</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="e.g Sample Category"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="orderNumber"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Order Number</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="e.g Sample Category"
@@ -197,6 +164,22 @@ export default function CreateComponent() {
                       <FormControl>
                         <Textarea
                           placeholder="e.g Sample Category"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                                <FormField
+                  control={form.control}
+                  name="purchaseCost"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Purchase Cost</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="12121"
                           {...field}
                         />
                       </FormControl>

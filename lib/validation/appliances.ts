@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const createAppliancesSchema = z.object({
   name:    z.string().min(1, { message: "Name required" }),
+  serial:    z.string().min(1, { message: "Serial required" }),
   category:    z.string().min(1, { message: "Category required" }),
   location:    z.string().min(1, { message: "location required" }),
   purchaseDate:  z.string().min(1, { message: "Purchase Date required" }),

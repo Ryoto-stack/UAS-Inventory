@@ -50,14 +50,13 @@ model Component {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
   createdAt    DateTime @default(now())
   name         String
+  serial       String
+  status       String
   category     String
   quantity     String
-  minQty       String
-  serial       String
-  company      String
   location     String
-  orderNumber  String
   purchaseDate String
+  purchaseCost String
 
   @@map("component")
 }
@@ -125,6 +124,7 @@ model Appliances {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
   createdAt    DateTime @default(now())
   name         String
+  serial       String
   category     String
   location     String
   purchaseDate String

@@ -9,8 +9,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { Badge } from "./ui/badge";
-
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -25,9 +23,9 @@ import { ListFilter, MoreHorizontal, PlusCircle, Download } from "lucide-react";
 
 import prisma from "@/lib/db/prisma";
 
-export default async function ConsumableTable() {
+export default async function FurnitureTable() {
 
-    const data = await prisma.consumables.findMany({orderBy:{createdAt:'desc'}}) 
+    const data = await prisma.furniture.findMany({orderBy:{createdAt:'desc'}}) 
     console.log(data);
     
   return (
@@ -36,17 +34,13 @@ export default async function ConsumableTable() {
         data && data.map((x, y:number)=>{
             return(
                 <TableRow key={y}>
-        <TableCell className="font-medium">{x.name}</TableCell>
-        <TableCell>
-          <Badge variant="default">{x.category}</Badge>
-        </TableCell>
-        <TableCell className="hidden md:table-cell">{x.status}</TableCell>
+        <TableCell className="font-medium">{x.furnitureName}</TableCell>
+        <TableCell className="hidden md:table-cell">{x.category}</TableCell>
+        <TableCell className="hidden md:table-cell">{x.modelNo}</TableCell>
         <TableCell className="hidden md:table-cell">{x.manufacturer}</TableCell>
-        <TableCell className="hidden md:table-cell">{x.itemNumber}</TableCell>
         <TableCell className="hidden md:table-cell">{x.location}</TableCell>
         <TableCell className="hidden md:table-cell">{x.purchaseDate}</TableCell>
         <TableCell className="hidden md:table-cell">{x.purchaseCost}</TableCell>
-        <TableCell className="hidden md:table-cell">{x.quantity}</TableCell>
         <TableCell className="hidden md:table-cell">{new Date(x.createdAt).toLocaleString('en-US', { timeZone: 'Asia/Manila' })}</TableCell>
 
         <TableCell>

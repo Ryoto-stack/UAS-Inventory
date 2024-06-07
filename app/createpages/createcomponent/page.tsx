@@ -1,6 +1,6 @@
-
-import CreateComponent from '@/components/createpages/createcomponent'
 import React from 'react'
+import CreateComponent from '@/components/createpages/createcomponent'
+
 
 export default function page() {
   return (

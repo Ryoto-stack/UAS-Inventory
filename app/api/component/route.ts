@@ -14,27 +14,25 @@ export async function POST(req: Request) {
 
     const {
       name,
+      serial,
+      status,
       category,
       quantity,
-      minQty,
-      serial,
-      company,
       location,
-      orderNumber,
       purchaseDate,
+      purchaseCost
     } = parseResult.data;
 
     const job = await prisma.component.create({
       data: {
         name,
+        serial,
+        status,
         category,
         quantity,
-        minQty,
-        serial,
-        company,
         location,
-        orderNumber,
         purchaseDate,
+        purchaseCost
       },
     });
 

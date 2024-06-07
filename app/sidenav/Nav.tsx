@@ -145,7 +145,7 @@ export default function Nav() {
                       </a>
                     </MenubarItem>
                     <MenubarItem className="font-bold">
-                      <a href="/furniture">Furniture<br/> 
+                      <a href="/furnitures">Furniture<br/> 
                       <Description className="font-light"> Movable objects used to enhance the environment within a workspace.
                        </Description> 
                       </a>

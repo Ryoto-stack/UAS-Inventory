@@ -31,11 +31,10 @@ import {
 } from "@/components/ui/table";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 
-
 import React from "react";
 import Nav from "@/app/sidenav/Nav";
 
-export function Assets({ children }: { children: React.ReactNode }) {
+export function Vehicle({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen w-full flex-col ">
       <Nav />
@@ -45,9 +44,9 @@ export function Assets({ children }: { children: React.ReactNode }) {
             <TabsContent value="all">
               <Card x-chunk="dashboard-06-chunk-0">
                 <CardHeader>
-                  <CardTitle>Assets</CardTitle>
+                  <CardTitle>Vehicle</CardTitle>
                   <CardDescription>
-                    Manage your assets and view their status.
+                    Manage your vehicle and view their status.
                   </CardDescription>
                   <div className="flex items-end justify-end">
                     <div className="flex items-end gap-2">
@@ -78,8 +77,15 @@ export function Assets({ children }: { children: React.ReactNode }) {
                           </DropdownMenuCheckboxItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
-                 
-                      <Link href="createpages/createassets">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-7 gap-1 bg-yellow-300 text-neutral-950"
+                      >
+                        <Download className="h-3.5 w-3.5" />
+                        <span className="sr-only sm:not-sr-only">Export</span>
+                      </Button>
+                      <Link href="createpages/createvehicle">
                         <Button
                           size="sm"
                           variant="outline"
@@ -87,7 +93,7 @@ export function Assets({ children }: { children: React.ReactNode }) {
                         >
                           <PlusCircle className="h-3.5 w-3.5" />
                           <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                            Add Asset
+                            Add Vehicle
                           </span>
                         </Button>
                       </Link>
@@ -98,10 +104,12 @@ export function Assets({ children }: { children: React.ReactNode }) {
                   <Table>
                     <TableHeader>
                       <TableRow>
-                        <TableHead>Model</TableHead>
-                        <TableHead>Status</TableHead>
-                        <TableHead>Serial</TableHead>
+                        <TableHead>Vehicle Model</TableHead>
                         <TableHead>Category</TableHead>
+                        <TableHead>Plate Number</TableHead>
+                        <TableHead>Location</TableHead>
+                        <TableHead>Purchase Date</TableHead>
+                        <TableHead>Purchase Cost</TableHead>
                         <TableHead>Created At</TableHead>
                         <TableHead>Actions</TableHead>
                       </TableRow>
