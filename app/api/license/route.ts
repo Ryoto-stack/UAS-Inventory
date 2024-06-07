@@ -18,8 +18,6 @@ export async function POST(req: Request) {
         manufacturer, 
         licensedto_name, 
         licensedto_email, 
-        supplier, 
-        orderNo,  
         purchaseDate,
         purchaseCost, 
         expirationDate,    } = parseResult.data;
@@ -31,8 +29,6 @@ export async function POST(req: Request) {
             manufacturer, 
             licensedto_name, 
             licensedto_email, 
-            supplier, 
-            orderNo,  
             purchaseDate,
             purchaseCost, 
             expirationDate, 

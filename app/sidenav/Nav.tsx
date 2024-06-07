@@ -157,7 +157,7 @@ export default function Nav() {
                       </a>
                     </MenubarItem>
                     <MenubarItem className="font-bold">
-                      <a href="/createpages/appliances">Appliances<br/> 
+                      <a href="/appliances">Appliances<br/> 
                       <Description className="font-light"> Electronic devices designed for specific functions.
                        </Description> 
                       </a>

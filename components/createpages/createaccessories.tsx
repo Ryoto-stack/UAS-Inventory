@@ -33,12 +33,24 @@ export default function CreateAccessories() {
   });
 
   async function handleOnSubmit(input: CreateAccessorySchema) {
-    const response = await fetch("/api/accessory", {
-      method: "POST",
-      body: JSON.stringify(input),
-    });
-
-    if (!response.ok) throw Error("Status code: " + response.status);
+    try {
+      const response = await fetch("/api/accessory", {
+        method: "POST",
+        body: JSON.stringify(input),
+      });
+  
+      if (!response.ok) {
+        throw Error("Status code: " + response.status);
+      } else {
+        // Show success alert
+        alert("Form submitted successfully!");
+        // Reload the page upon successful submission
+        window.location.reload();
+      }
+    } catch (error) {
+      console.error("Error during form submission:", error);
+      // Handle any errors here, if necessary
+    }
   }
 
   return (

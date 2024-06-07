@@ -34,7 +34,6 @@ import { Tabs, TabsContent } from "@/components/ui/tabs";
 import React from "react";
 import Nav from "@/app/sidenav/Nav";
 
-
 export function Assets({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen w-full flex-col ">
@@ -107,12 +106,8 @@ export function Assets({ children }: { children: React.ReactNode }) {
                       <TableRow>
                         <TableHead>Model</TableHead>
                         <TableHead>Status</TableHead>
-                        <TableHead className="hidden md:table-cell">
-                          Serial
-                        </TableHead>
-                        <TableHead className="hidden md:table-cell">
-                          Category
-                        </TableHead>
+                        <TableHead>Serial</TableHead>
+                        <TableHead>Category</TableHead>
                         <TableHead>Created At</TableHead>
                         <TableHead>
                           <span className="sr-only">Actions</span>

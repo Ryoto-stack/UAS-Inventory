@@ -7,8 +7,6 @@ export const createLicenseSchema = z.object({
   manufacturer:  z.string().min(1, { message: "Manufacturer required" }),
   licensedto_name:    z.string().min(1, { message: "Licensed to name required" }),
   licensedto_email:  z.string().min(1, { message: "Licensed to email required" }),
-  supplier:  z.string().min(1, { message: "Supplier required" }),
-  orderNo:  z.string().min(1, { message: "Order Number required" }),
   purchaseDate:  z.string().min(1, { message: "PurchaseDate required" }),
   purchaseCost:  z.string().min(1, { message: "PurchaseCost required" }),
   expirationDate:  z.string().min(1, { message: "Quantity required" }),

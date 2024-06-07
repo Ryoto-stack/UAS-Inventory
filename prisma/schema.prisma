@@ -67,11 +67,10 @@ model Consumables {
   createdAt    DateTime @default(now())
   name         String
   category     String
-  modelNo      String
+  status       String
   manufacturer String
   itemNumber   String
   location     String
-  orderNumber  String
   purchaseDate String
   purchaseCost String
   quantity     String
@@ -88,8 +87,6 @@ model License {
   manufacturer     String
   licensedto_name  String
   licensedto_email String
-  supplier         String
-  orderNo          String
   purchaseDate     String
   purchaseCost     String
   expirationDate   String

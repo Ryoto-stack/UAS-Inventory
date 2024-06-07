@@ -27,26 +27,36 @@ export default function CreateConsumables() {
         defaultValues: {
             name: "",
             category: "",
-            modelNo: "",
+            status: "",
             manufacturer: "",
             itemNumber: "",
             location: "",
-            orderNumber: "",
             purchaseDate: "",
             purchaseCost: "",
             quantity: "",
         },
     });
 
-    async function handleOnSubmit(input: CreateConsumablesSchema) {
-        const response = await fetch("/api/consumables", {
+async function handleOnSubmit(input: CreateConsumablesSchema) {
+        try {
+          const response = await fetch("/api/consumables", {
             method: "POST",
             body: JSON.stringify(input),
-        });
-
-        if (!response.ok) throw Error("Status code: " + response.status);
-    }
-
+          });
+      
+          if (!response.ok) {
+            throw Error("Status code: " + response.status);
+          } else {
+            // Show success alert
+            alert("Form submitted successfully!");
+            // Reload the page upon successful submission
+            window.location.reload();
+          }
+        } catch (error) {
+          console.error("Error during form submission:", error);
+          // Handle any errors here, if necessary
+        }
+      }
     return (
         <div className="flex min-h-screen w-full flex-col ">
             <Nav />
@@ -87,10 +97,10 @@ export default function CreateConsumables() {
                                 />
                                 <FormField
                                     control={form.control}
-                                    name="modelNo"
+                                    name="status"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Model No.</FormLabel>
+                                            <FormLabel>Status</FormLabel>
                                             <FormControl>
                                                 <Textarea
                                                     placeholder="...."
@@ -139,22 +149,6 @@ export default function CreateConsumables() {
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormLabel>Location</FormLabel>
-                                            <FormControl>
-                                                <Textarea
-                                                    placeholder="...."
-                                                    {...field}
-                                                />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={form.control}
-                                    name="orderNumber"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Order Number</FormLabel>
                                             <FormControl>
                                                 <Textarea
                                                     placeholder="...."

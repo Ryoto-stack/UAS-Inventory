@@ -14,11 +14,10 @@ export async function POST(req: Request) {
   
       const {  name,  
         category,  
-        modelNo,  
+        status,  
         manufacturer, 
         itemNumber,  
-        location,     
-        orderNumber, 
+        location,      
         purchaseDate, 
         purchaseCost, 
         quantity,   } = parseResult.data;
@@ -27,11 +26,10 @@ export async function POST(req: Request) {
         data: {
             name,  
             category,  
-            modelNo,  
+            status,  
             manufacturer, 
             itemNumber,  
-            location,     
-            orderNumber, 
+            location,      
             purchaseDate, 
             purchaseCost, 
             quantity,    

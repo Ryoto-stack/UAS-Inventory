@@ -31,8 +31,6 @@ export default function CreateLicense() {
             manufacturer: "",
             licensedto_name: "",
             licensedto_email: "",
-            supplier: "",
-            orderNo: "",
             purchaseDate: "",
             purchaseCost: "",
             expirationDate: "",
@@ -40,13 +38,25 @@ export default function CreateLicense() {
     });
 
     async function handleOnSubmit(input: CreateLicenseSchema) {
-        const response = await fetch("/api/license", {
+        try {
+          const response = await fetch("/api/license", {
             method: "POST",
             body: JSON.stringify(input),
-        });
-
-        if (!response.ok) throw Error("Status code: " + response.status);
-    }
+          });
+      
+          if (!response.ok) {
+            throw Error("Status code: " + response.status);
+          } else {
+            // Show success alert
+            alert("Form submitted successfully!");
+            // Reload the page upon successful submission
+            window.location.reload();
+          }
+        } catch (error) {
+          console.error("Error during form submission:", error);
+          // Handle any errors here, if necessary
+        }
+      }
 
     return (
         <div className="flex min-h-screen w-full flex-col ">
@@ -140,38 +150,6 @@ export default function CreateLicense() {
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormLabel>Licensed to (Email)</FormLabel>
-                                            <FormControl>
-                                                <Textarea
-                                                    placeholder="...."
-                                                    {...field}
-                                                />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                      <FormField
-                                    control={form.control}
-                                    name="supplier"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Supplier</FormLabel>
-                                            <FormControl>
-                                                <Textarea
-                                                    placeholder="...."
-                                                    {...field}
-                                                />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={form.control}
-                                    name="orderNo"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Order Number</FormLabel>
                                             <FormControl>
                                                 <Textarea
                                                     placeholder="...."

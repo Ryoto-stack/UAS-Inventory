@@ -26,12 +26,11 @@ import { Tabs, TabsContent} from "@/components/ui/tabs";
 import React from "react";
 import Nav from "@/app/sidenav/Nav";
 
-export function Consumables() {
+export function Consumables({ children }: { children: React.ReactNode }) {
     return (
         <div className="flex min-h-screen w-full flex-col bg-muted/40">
             <Nav />
             <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-
                 <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
                     <Tabs defaultValue="all">
                         <TabsContent value="all">
@@ -64,32 +63,21 @@ export function Consumables() {
                                             <TableRow>
                                                 <TableHead>Name</TableHead>
                                                 <TableHead>Category</TableHead>
-                                                <TableHead>Model No.</TableHead>
-                                                <TableHead>Item No.</TableHead>
-                                                <TableHead>Total</TableHead>
-                                                <TableHead>Remaining</TableHead>
-                                                <TableHead>Min QTY</TableHead>
+                                                <TableHead>Manufacturer</TableHead>
+                                                <TableHead>Item Number</TableHead>
                                                 <TableHead>Location</TableHead>
-                                                <TableHead>Order No.</TableHead>
                                                 <TableHead>Purchase Date</TableHead>
                                                 <TableHead>Purchase Cost</TableHead>
-                                                <TableHead>In/Out</TableHead>
+                                                <TableHead>Quantity</TableHead>
+                                                <TableHead>Created At</TableHead>
                                                 <TableHead>
                                                     <span className="sr-only">Actions</span>
                                                 </TableHead>
                                             </TableRow>
                                         </TableHeader>
-                                        <TableRow className="text-xs text-muted-foreground">
-                                            No matching records found
-                                        </TableRow>
+                                        {children}
                                     </Table>
                                 </CardContent>
-                                <CardFooter>
-                                    <div className="text-xs text-muted-foreground">
-                                        Showing <strong>1-10</strong> of <strong>32</strong>{" "}
-                                        products
-                                    </div>
-                                </CardFooter>
                             </Card>
                         </TabsContent>
 
