@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const createAssetSchema = z.object({
   model:    z.string().min(1, { message: "Model required" }),
-  status:    z.string().min(1, { message: "Status required" }),
+  status: z.enum(["Defective", "Spare", "Deployed"]).optional(),
   serial:    z.string().min(1, { message: "Serial required" }),
   category:  z.string().min(1, { message: "Category required" }),
 });

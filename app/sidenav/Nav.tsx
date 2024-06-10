@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 import { UserButton, useAuth } from "@clerk/nextjs";
+ 
 
 const menu2 = [
   "Dashboard",
@@ -49,18 +50,10 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
-import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Description } from "@radix-ui/react-toast";
 
 export default function Nav() {
   const { userId } = useAuth();
@@ -104,69 +97,6 @@ export default function Nav() {
             </Link>
           </nav>
         </div>
-        <div>
-            <Menubar>
-              <MenubarMenu>
-                <MenubarTrigger className="cursor-pointer">
-                  Inventory
-                </MenubarTrigger>
-                <MenubarContent className="flex">
-                  <div className="grid grid-cols-2 w-80 h-auto">
-                    <MenubarItem className="font-bold ">
-                      <a href="/assets">Assets <br/> 
-                      <Description className="font-light"> Tangible items or equipment that are stocked within the system.
-                       </Description> 
-                      </a>
-                    </MenubarItem>
-                    <MenubarItem className="font-bold">
-                      <a href="/license">License<br/> 
-                      <Description className="font-light"> Legal authorization of digital resources within an organization.
-                       </Description> 
-                      </a>
-                    </MenubarItem>
-                    <MenubarItem className="font-bold ">
-                      <a href="/accessories">Accessories<br/> 
-                      <Description className="font-light"> Additional peripherals and supplementary items.
-                       </Description> 
-                      </a>
-                    </MenubarItem>
-                    <MenubarItem className="font-bold">
-                      <a href="/consumables">Consumables<br/> 
-                      <Description className="font-light"> Other supplies that are regularly depleted and need replenishment.
-                       </Description> 
-                      </a>
-                    </MenubarItem>
-                  </div>
-                  <div className="grid grid-cols-2 w-80 h-auto">
-                    <MenubarItem className="font-bold">
-                      <a href="/component">Component<br/> 
-                      <Description className="font-light"> Elements that make up larger systems, like CPUs.
-                       </Description> 
-                      </a>
-                    </MenubarItem>
-                    <MenubarItem className="font-bold">
-                      <a href="/furnitures">Furniture<br/> 
-                      <Description className="font-light"> Movable objects used to enhance the environment within a workspace.
-                       </Description> 
-                      </a>
-                    </MenubarItem>
-                    <MenubarItem className="font-bold">
-                      <a href="/vehicle">Vehicle<br/> 
-                      <Description className="font-light"> Means of transportation designed to carry people or goods.
-                       </Description> 
-                      </a>
-                    </MenubarItem>
-                    <MenubarItem className="font-bold">
-                      <a href="/appliances">Appliances<br/> 
-                      <Description className="font-light"> Electronic devices designed for specific functions.
-                       </Description> 
-                      </a>
-                    </MenubarItem>
-                  </div>
-                </MenubarContent>
-              </MenubarMenu>
-            </Menubar>
-          </div>
         <div className="flex w-auto items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
 
           <form className="ml-auto flex-1 sm:flex-initial">
@@ -179,39 +109,7 @@ export default function Nav() {
               />
             </div>
           </form>
-          <Menubar>
-            <MenubarMenu>
-              <MenubarTrigger className="cursor-pointer">
-                Create New
-              </MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem>
-                  <a href="/createpages/createassets">Assets</a>
-                </MenubarItem>
-                <MenubarItem>
-                  <a href="/createpages/createlicense">License</a>
-                </MenubarItem>
-                <MenubarItem>
-                  <a href="/createpages/createaccessories">Accessories</a>
-                </MenubarItem>
-                <MenubarItem>
-                  <a href="/createpages/createconsumables">Consumables</a>
-                </MenubarItem>
-                <MenubarItem>
-                  <a href="/createpages/createcomponent">Component</a>
-                </MenubarItem>
-                <MenubarItem>
-                  <a href="/createpages/createfurniture">Furniture</a>
-                </MenubarItem>
-                <MenubarItem>
-                  <a href="/createpages/createvehicle">Vehicle</a>
-                </MenubarItem>
-                <MenubarItem>
-                  <a href="/createpages/createappliances">Appliances</a>
-                </MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-          </Menubar>
+
         </div>
         {!userId && (
           <Link href={"/sign-in"}>
