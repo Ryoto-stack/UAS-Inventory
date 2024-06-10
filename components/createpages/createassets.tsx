@@ -15,7 +15,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Nav from "../../app/sidenav/Nav";
-
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export default function CreateAssets() {
   const form = useForm<CreateAssetSchema>({
@@ -34,7 +35,7 @@ export default function CreateAssets() {
         method: "POST",
         body: JSON.stringify(input),
       });
-  
+
       if (!response.ok) {
         throw Error("Status code: " + response.status);
       } else {
@@ -50,73 +51,89 @@ export default function CreateAssets() {
   }
 
   return (
-    <div className="flex min-h-screen w-full flex-col ">
+    <div className="flex min-h-screen w-full flex-col">
       <Nav />
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
         <main className="flex items-center justify-center py-5">
-            <div className="mx-auto grid w-[600px] gap-6">
+          <div className="mx-auto grid w-[600px] gap-6">
             <h1 className="text-3xl font-bold">Create New Asset</h1>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(handleOnSubmit)}>
-              <FormField
-                control={form.control}
-                name="model"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Model</FormLabel>
-                    <FormControl>
-                      <Input placeholder="e.g Samsung" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="status"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Status</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="e.g Active, Spare, Deployed"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="serial"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Serial</FormLabel>
-                    <FormControl>
-                      <Textarea placeholder="e.g SN12345678" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="category"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Category Description</FormLabel>
-                    <FormControl>
-                      <Textarea placeholder="e.g Sample Category" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className=" mt-3">Submit</Button>
-            </form>
-          </Form>
-        </div>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(handleOnSubmit)}>
+                <FormField
+                  control={form.control}
+                  name="model"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Model</FormLabel>
+                      <FormControl>
+                        <Input placeholder="e.g Samsung" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="status"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Status</FormLabel>
+                      <FormControl>
+                        <RadioGroup defaultValue="defective" {...field}>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="defective" id="r1" />
+                            <Label htmlFor="r1">Defective</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="spare" id="r2" />
+                            <Label htmlFor="r2">Spare</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="deployed" id="r3" />
+                            <Label htmlFor="r3">Deployed</Label>
+                          </div>
+                        </RadioGroup>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="serial"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Serial</FormLabel>
+                      <FormControl>
+                        <Textarea placeholder="e.g SN12345678" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="category"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Category Description</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="e.g Sample Category"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" className=" mt-3">
+                  Submit
+                </Button>
+              </form>
+            </Form>
+          </div>
         </main>
       </div>
     </div>

@@ -38,7 +38,7 @@ import {
 
 import Barchart from "@/app/analyticcomponent/barchart";
 
-export function Dashboard() {
+export function Dashboard({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen w-full flex-col ">
       <Nav />
@@ -210,7 +210,7 @@ export function Dashboard() {
                       </TableCell>
                       <TableCell>Asset</TableCell>
                       <TableCell>
-                        <Badge variant="secondary" className="text-xs">
+                        <Badge variant="verde" className="text-xs">
                           Approved
                         </Badge>
                       </TableCell>
@@ -249,7 +249,7 @@ export function Dashboard() {
                       </TableCell>
                       <TableCell>Consumables</TableCell>
                       <TableCell>
-                        <Badge className="text-xs" variant="secondary">
+                        <Badge className="text-xs" variant="verde">
                           Approved
                         </Badge>
                       </TableCell>
@@ -304,112 +304,15 @@ export function Dashboard() {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Added By</TableHead>
                       <TableHead>Model</TableHead>
                       <TableHead>Status</TableHead>
                       <TableHead>Serial</TableHead>
                       <TableHead>Category</TableHead>
-                      <TableHead className="text-right">Submitted At</TableHead>
+                      <TableHead>Created At</TableHead>
+                      <TableHead>Actions</TableHead>
                     </TableRow>
                   </TableHeader>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell>
-                        <div className="font-medium">Mecca Denise Dagami</div>
-                      </TableCell>
-                      <TableCell>Plantronics Headphones</TableCell>
-                      <TableCell>
-                        <Badge variant="secondary" className="text-xs">
-                          Deployed
-                        </Badge>
-                      </TableCell>
-                      <TableCell>KGH123GHJ</TableCell>
-                      <TableCell>Headphones</TableCell>
-                      <TableCell className="text-right">
-                        2023-07-12 10:42 AM
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>
-                        <div className="font-medium">Orville Montero</div>
-                      </TableCell>
-                      <TableCell>Plantronic Headphones</TableCell>
-                      <TableCell>
-                        <Badge className="text-xs" variant="destructive">
-                          Spare
-                        </Badge>
-                      </TableCell>
-                      <TableCell>ASDJ23HKJD1324</TableCell>
-                      <TableCell>Headphones</TableCell>
-                      <TableCell className="text-right">
-                        2023-10-18 03:21 PM
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>
-                        <div className="font-medium">Kile Santiago</div>
-                      </TableCell>
-                      <TableCell>Plantronic Headphones</TableCell>
-                      <TableCell>
-                        <Badge className="text-xs" variant="destructive">
-                          Spare
-                        </Badge>
-                      </TableCell>
-                      <TableCell>SHDKKJK123123</TableCell>
-                      <TableCell>Headphones</TableCell>
-                      <TableCell className="text-right">
-                        SHDKKJK123123
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>
-                        <div className="font-medium">Kent Escala</div>
-                      </TableCell>
-                      <TableCell>Lenovo Thinkpad</TableCell>
-                      <TableCell>
-                        <Badge className="text-xs" variant="secondary">
-                          Defective
-                        </Badge>
-                      </TableCell>
-                      <TableCell>ASDKJASDKJ123567</TableCell>
-                      <TableCell>Laptop</TableCell>
-                      <TableCell className="text-right">
-                        2023-12-25 11:59 PM
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>
-                        <div className="font-medium">Ash Ketchup</div>
-                      </TableCell>
-                      <TableCell>DELL Monitor</TableCell>
-                      <TableCell>
-                        <Badge className="text-xs" variant="destructive">
-                          Spare
-                        </Badge>
-                      </TableCell>
-                      <TableCell>ASHJKDK1234128</TableCell>
-                      <TableCell>Monitor</TableCell>
-                      <TableCell className="text-right">
-                        2024-01-01 12:00 AM
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>
-                        <div className="font-medium">Coco Martin</div>
-                      </TableCell>
-                      <TableCell>Plantronic Headphones</TableCell>
-                      <TableCell>
-                        <Badge className="text-xs" variant="destructive">
-                          Defective
-                        </Badge>
-                      </TableCell>
-                      <TableCell>JLSDIKL123789</TableCell>
-                      <TableCell>Headphones</TableCell>
-                      <TableCell className="text-right">
-                        2024-02-14 02:14 PM
-                      </TableCell>
-                    </TableRow>
-                  </TableBody>
+                  {children}
                 </Table>
               </CardContent>
             </Card>

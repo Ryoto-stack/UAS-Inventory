@@ -18,7 +18,7 @@ export default function Analytics() {
           <div className="px-5 py-2 flex-row flex">
             <Card
               x-chunk="analytics-02-chunk-3"
-              className="flex h-[550px] w-[550px] flex-col mr-5"
+              className="flex h-[550px] w-[550px] flex-col mr-5 "
             >
               <CardHeader>
                 <CardTitle className="flex items-center justify-center">
@@ -31,7 +31,7 @@ export default function Analytics() {
             </Card>
             <Card
               x-chunk="analytics-02-chunk-3"
-              className="flex h-[550px] w-[500px] flex-col mr-5"
+              className="flex h-[550px] w-[500px] flex-col mr-5 "
             >
               <CardHeader>
                 <CardTitle className="flex items-center justify-center">
